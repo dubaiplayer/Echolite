@@ -32,6 +32,7 @@ function App() {
           <h1 className='title'>Welcome Back!</h1>
           <input className="serverInput" ref={roomInputRef} ></input>
           <button className="serverInput" onClick={() => setRoom(roomInputRef.current.value)}>Enter Server</button>
+          <h5>If you want to go back click on the refresh button</h5>
         </div>} 
       </div>
     ) 
