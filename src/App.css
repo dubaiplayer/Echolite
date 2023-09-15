@@ -1,0 +1,57 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.homeButton{
+  background-color: blue;
+  width: 400px;
+  font-size: large;
+  justify-content: center;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.slogan{
+  padding: 50px;
+}
+
+.new-message-form{
+  bottom: 0%;
+  position: fixed;
+  right:0;
+  left: 0;
+}
+
+.new-message-input{
+  width: 500px;
+  height: 40px;
+  border: none;
+}
+
+.message-card{
+  text-align: left;
+  width: 1000px;
+  margin: 100px;
+}
+
+.profile-pic{
+  height: 50px;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+}
+
+.title{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
