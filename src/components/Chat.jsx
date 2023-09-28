@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../App.css"
-import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from "firebase/firestore"
+import { addDoc, setDoc,getDocs, collection, serverTimestamp, onSnapshot, query, where, orderBy} from "firebase/firestore"
 import { auth, db } from "../Firebase.jsx"
 
 export const Chat = (props) => {
@@ -8,6 +8,8 @@ export const Chat = (props) => {
     const [newMessage, setNewMessage] = useState("")
     const messagesRef = collection(db, "messages")
     const [messages, setMessages] = useState([])
+
+    // const historyRef = collection(db, 'history')
 
     useEffect(() => {
         const queryMessages = query(messagesRef, where("room", "==", room), orderBy("createdAt"))
@@ -33,6 +35,11 @@ export const Chat = (props) => {
             photo: auth.currentUser.photoURL,
             room,
         })
+
+        // await addDoc(historyRef, {
+        //     user: auth.currentUser.displayName,
+        //     room,
+        // })
 
         setNewMessage("")
     }
