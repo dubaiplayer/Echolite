@@ -9,7 +9,7 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 function App() {
-  let serversJoined = [];
+  const [componentVisibility, setComponentVisibility] = useState(false)
 
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
   const [room, setRoom] = useState(null);
@@ -27,13 +27,10 @@ function App() {
       setRoom(roomInputRef.current.value);
     }
 
-    // function historyView() {
-    //   return (
-    //     <History>
-    //     </History>
-    //   )
-      
-    //}
+    function historyView() {
+      setComponentVisibility(true)
+    }
+
     return (
       <div>
         {room ? (
@@ -46,11 +43,13 @@ function App() {
               Enter Server
             </button>
             <h5>If you want to go back click on the refresh button</h5>
-            {/* <button className="history" onClick={() => {historyView()}}>
+            <button className="history" onClick={() => {historyView()}}>
               View History
-            </button> */}
+            </button> 
           </div>
         )}
+
+        {componentVisibility && !room && <History></History>}
       </div>
     );
   }

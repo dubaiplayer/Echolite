@@ -9,7 +9,7 @@ export const Chat = (props) => {
     const messagesRef = collection(db, "messages")
     const [messages, setMessages] = useState([])
 
-    // const historyRef = collection(db, 'history')
+    const historyRef = collection(db, 'history')
 
     useEffect(() => {
         const queryMessages = query(messagesRef, where("room", "==", room), orderBy("createdAt"))
@@ -36,10 +36,12 @@ export const Chat = (props) => {
             room,
         })
 
-        // await addDoc(historyRef, {
-        //     user: auth.currentUser.displayName,
-        //     room,
-        // })
+        await addDoc(historyRef,  {
+            user: auth.currentUser.displayName,
+            email: auth.currentUser.email,
+            createdAt: serverTimestamp(),
+            room,
+        })
 
         setNewMessage("")
     }

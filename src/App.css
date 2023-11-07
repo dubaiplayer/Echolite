@@ -59,3 +59,9 @@
 .testText{
   background-color: blue;
 }
+
+.history-area{
+  line-height: normal;
+  text-align: left;
+  background-color: #333333;
+}
