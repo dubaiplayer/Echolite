@@ -5,6 +5,8 @@ import { History } from "./components/History.jsx"
 import React from "react";
 import "./App.css";
 
+import Max from "./assets/max.png"
+
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
@@ -43,6 +45,8 @@ function App() {
               Enter Server
             </button>
             <h5>If you want to go back click on the refresh button</h5>
+            <img src={Max} alt="" />
+            <button className="calling-page">Join Call</button>
             <button className="history" onClick={() => {historyView()}}>
               View History
             </button> 

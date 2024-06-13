@@ -26,12 +26,14 @@ export const Chat = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        .0
         if (newMessage === "") return;
         
         await addDoc(messagesRef, {
             text: newMessage,
             createdAt: serverTimestamp(),
             user: auth.currentUser.displayName,
+            
             photo: auth.currentUser.photoURL,
             room,
         })
